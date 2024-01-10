@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for sharenotes on 2024-01-04T17:46:50+08:00
+# fly.toml app configuration file generated for sharenotes on 2024-01-10T15:06:09+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -14,8 +14,9 @@ console_command = "php /var/www/html/artisan tinker"
 
 [env]
   APP_ENV = "production"
+  APP_ENV = "production"
   DB_CONNECTION = "pgsql"
-  APP_URL = "https://sharenotes.fly.dev"
+  APP_URL ="https://sharenotes.fly.dev"
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
@@ -29,14 +30,6 @@ console_command = "php /var/www/html/artisan tinker"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
-  
-  [deploy]
-  release_command = "php /var/www/html/artisan migrate --force"
-
-  [processes]
-  app=""
-  cron="cron -f"
-  worker ="php artisan queue:listen"
 
 [[vm]]
   cpu_kind = "shared"
