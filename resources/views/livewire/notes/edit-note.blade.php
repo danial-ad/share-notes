@@ -19,7 +19,7 @@ new #[Layout('layouts.app')] class extends Component {
         $this->fill($note);
         $this->noteTitle = $note->title;
         $this->noteBody = $note->body;
-        $this->noteRecipient = $note->recipient;
+        $this->noteRecipient = $note->receipent;
         $this->noteSendDate = $note->send_date;
         $this->noteIsPublished = $note->is_published;
     }
@@ -36,7 +36,7 @@ new #[Layout('layouts.app')] class extends Component {
         $this->note->update([
             'title' => $this->noteTitle,
             'body' => $this->noteBody,
-            'recipent' => $this->noteRecipient,
+            'receipent' => $this->noteRecipient,
             'send_date' => $this->noteSendDate,
             'is_published' => $this->noteIsPublished,
         ]);
@@ -56,7 +56,7 @@ new #[Layout('layouts.app')] class extends Component {
             <x-input wire:model="noteTitle" label="Note Title" placeholder="It's been a great day." />
             <x-textarea wire:model="noteBody" label="Your Note"
                 placeholder="Share all your thoughts with your friend." />
-            <x-input icon="user" wire:model="noteRecipient" label="Recipient" placeholder="yourfriend@email.com"
+            <x-input icon="user" wire:model="noteRecipient" label="Recipient"
                 type="email" />
             <x-input icon="calendar" wire:model="noteSendDate" type="date" label="Send Date" />
             <x-checkbox label="Note Published" wire:model='noteIsPublished' />

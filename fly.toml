@@ -15,7 +15,7 @@ console_command = "php /var/www/html/artisan tinker"
 [env]
   APP_ENV = "production"
   DB_CONNECTION = "pgsql"
-  APP_URL = "https://fly-hello-laravel.fly.dev"
+  APP_URL = "https://sharenotes.fly.dev"
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
@@ -33,6 +33,10 @@ console_command = "php /var/www/html/artisan tinker"
   [deploy]
   release_command = "php /var/www/html/artisan migrate --force"
 
+  [processes]
+  app=""
+  cron="cron -f"
+  worker ="php artisan queue:listen"
 
 [[vm]]
   cpu_kind = "shared"

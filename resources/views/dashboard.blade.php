@@ -10,7 +10,7 @@
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{-- <h1 class="text-4xl">hi there folks</h1> --}}
-                     <x-button primary>Hi there</x-button>
+                    <livewire:dashboardstats />
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@ new class extends Component {
                             </div>
                         </div>
                         <div class="flex items-end justify-between mt-4 space-x-1">
-                            <p class="text-xs">Recipient: <span class="font-semibold">{{ $note->recipient }}</span></p>
+                            <p class="text-xs">Recipient: <span class="font-semibold">{{ $note->receipentss }}</span></p>
                             <div>
                                 <x-button.circle icon="eye"
                                     href="{{ route('notes.view', $note) }}"></x-button.circle>
